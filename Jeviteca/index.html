@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeviteca</title>
+    <!-- cargo bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body ng-app="jeviteca">
+
+    <!--contenedor general de la aplicación-->
+    <div class="container">
+        <header>
+            <h1>Jeviteca</h1>
+        </header>
+        <!--banda de navegación -->
+        <nav>
+            <ul class="nav nav-tabs">
+                <li role="presentation" >
+                    <a href="#/albums">Albums</a>
+                </li>
+                <li role="presentation">
+                    <a href="#/bandas">Bandas</a>
+                </li>
+                <li role="presentation">
+                    <a href="#/generos">Géneros</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <section ng-view></section>
+        </div>
+    </div>
+    <!--contenedor de las vistas-->
+
+
+    <!--ref libreria de angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <!--ref app.js-->
+    <script src="script/app.js"></script>
+    <!--ref coleciones-->
+    <script src="script/controllers/CollectionsAlbums.js"></script>
+    <script src="script/controllers/CollectionsBandas.js"></script>
+    <script src="script/controllers/CollectionsGeneros.js"></script>
+    <!-- ref providers-->
+    <script src="script/Providers/AlbumsBackend.js"></script>
+    <!-- ref constants-->
+    <script src="script/constants/settings.js"></script>
+
+
+</body>
+</html>

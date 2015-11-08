@@ -1,0 +1,30 @@
+
+<div>
+    <header>
+        <h2>Albums</h2>
+    </header>
+    <table class="table">
+        <tr ng-repeat="album in albums">
+            <td>{{album.title}} </td>
+            <td>{album.year}} </td>
+           <!-- <td>{{album.band}} </td>
+            <td>{{album.genre}} </td>
+            <td>{{album.tracklist}} </td>
+            <td>-->
+                <img src="img/{{::album.image}}" alt="Sin Imagen" width="30"/>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <footer>
+            <aside>
+                <small>
+                    <a href="#">Informacion de interes</a>
+                </small>
+            </aside>
+            Creado por Balate
+        </footer>
+    </div>
+</div>
+
+
