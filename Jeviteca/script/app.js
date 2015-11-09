@@ -2,8 +2,11 @@
 //definición de la aplicación
 angular.module("jeviteca", ["ngRoute"]);
 
-angular.module("jeviteca").config(function(AlbumsBackendProvider, settings) {
+angular.module("jeviteca").config(function(AlbumsBackendProvider,BandasBackendProvider, GenerosBackendProvider, settings) {
     AlbumsBackendProvider.establecerUrlAlbums(settings.albumsUrl);
+    BandasBackendProvider.establecerUrlBands(settings.bandasUrl);
+    GenerosBackendProvider.establecerUrlGengers(settings.generosUrl);
+
 
 });
 
@@ -26,13 +29,25 @@ angular.module("jeviteca").config(function ($routeProvider) {
     //defino ruta Bandas
     $routeProvider.when("/bandas",{
         controller:"ColecionBandasCtrl",
-        templateUrl:"views/ColeccionBandas.html"
+        templateUrl:"views/ColeccionBandas.html",
+        resolve:{
+            Albums:["BandasBackend", function(BandasBackend){
+                return BandasBackend.obtenerBands();
+
+            }]
+        }
     });
 
     //defino ruta Géneros
     $routeProvider.when("/generos",{
         controller:"ColecionGenerosCtrl",
-        templateUrl:"views/ColeccionGeneros.html"
+        templateUrl:"views/ColeccionGeneros.html",
+        resolve:{
+            Albums:["GenerosBackend", function(GenerosBackend){
+                return GenerosBackend.obtenerGengers();
+
+            }]
+        }
     });
 
     //ruta por defecto

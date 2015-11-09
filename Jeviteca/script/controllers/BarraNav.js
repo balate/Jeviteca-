@@ -9,7 +9,7 @@ angular.module("jeviteca").controller("BarraNavegacionCrtl",function($scope, $ro
     $scope.pathBands = function(){
 
         return $route.current && $route.current.$$route.originalPath === "/bandas";
-    }
+    };
 
     $scope.pathGengers = function(){
 

@@ -1,4 +1,5 @@
-angular.module("jeviteca").controller("ColecionBandasCtrl", function($scope){
+angular.module("jeviteca").controller("ColecionBandasCtrl", function($scope, Bandas){
 
-    $scope.bandas =[];
+    $scope.bandas =Bandas.data;
+
 });
