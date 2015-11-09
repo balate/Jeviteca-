@@ -1,11 +1,11 @@
 // Backend de Albums
-angular.module("jeviteca").provider("AlbumsBackend", function() {
+angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
 
-    var urlAlbums = "";
+    var urlLocal = "";
 
     return {
         establecerUrlAlbums: function(value) {
-            urlAlbums = value;
+            urlLocal = value;
         },
 
         //obtener Albums
@@ -15,10 +15,12 @@ angular.module("jeviteca").provider("AlbumsBackend", function() {
 
                 obtenerAlbums: function() {
 
-                    return $http.get(urlAlbums, {
+                    return $http.get(urlLocal,{
 
                         cache: true
                     });
+
+
                 }
             };
         }]

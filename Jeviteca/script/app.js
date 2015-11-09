@@ -17,7 +17,8 @@ angular.module("jeviteca").config(function ($routeProvider) {
         templateUrl:"views/ColeccionAlbums.html",
         resolve:{
             Albums:["AlbumsBackend", function(AlbumsBackend){
-                return AlbumsBackend.obtenerAlbums();
+               return AlbumsBackend.obtenerAlbums();
+
             }]
         }
     });

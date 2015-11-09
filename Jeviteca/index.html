@@ -14,24 +14,25 @@
             <h1>Jeviteca</h1>
         </header>
         <!--banda de navegación -->
-        <nav>
+        <nav ng-controller="BarraNavegacionCrtl">
             <ul class="nav nav-tabs">
-                <li role="presentation" >
-                    <a href="#/albums">Albums</a>
+                <li role="presentation" ng-class="{'active':pathAlbums()}" >
+                    <a href="#/albums" >Albums</a>
                 </li>
-                <li role="presentation">
+                <li role="presentation" ng-class="{'active':pathBands()}" >
                     <a href="#/bandas">Bandas</a>
                 </li>
-                <li role="presentation">
+                <li role="presentation" ng-class="{'active':pathGengers()}" >
                     <a href="#/generos">Géneros</a>
                 </li>
             </ul>
         </nav>
         <div>
+            <!--contenedor de las vistas-->
             <section ng-view></section>
         </div>
     </div>
-    <!--contenedor de las vistas-->
+
 
 
     <!--ref libreria de angular-->
@@ -43,6 +44,8 @@
     <script src="script/controllers/CollectionsAlbums.js"></script>
     <script src="script/controllers/CollectionsBandas.js"></script>
     <script src="script/controllers/CollectionsGeneros.js"></script>
+    <script src="script/controllers/BarraNav.js"></script>
+
     <!-- ref providers-->
     <script src="script/Providers/AlbumsBackend.js"></script>
     <!-- ref constants-->
