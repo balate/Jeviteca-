@@ -3,22 +3,32 @@
         <h2 class="section_header">Bandas</h2>
     </header>
     <table class="table">
-        <tr ng-repeat="band in bandas">
-            <td>{{band.name}} </td>
-            <td>{{band.origin}} </td>
-            <td>{{band.members.name}} </td>
+        <h4><strong>Buscar</strong></h4>
+    <div class="form-inline">
+        <strong><label form="filtroName">Banda</label></strong>
+        <input type="text" id="filtroName" ng-model="nameFilter"/>
+        <strong><label form="filtroOrigen">Origen</label></strong>
+        <input type="text" id="filtroOrigen" ng-model="origenFilter"/>
+    </div>
+    </table>
+    <table class="table">
+        <tr ng-repeat="band in bandas | filter:{name: nameFilter} | filter:{origin: origenFilter}">
+            <td><p><strong>Nombre de Banda</strong></p>{{band.name}} </td>
+            <td><p><strong>Origén</strong></p>{{band.origin}} </td>
+            <td><p><strong>Miembros</strong></p>{{band.members.name}} </td>
         </tr>
     </table>
     <div>
         <footer>
             <aside>
                 <small>
-                    <a href="#">Informacion de interes</a>
+                    <a href="#http://www.metaltotal.com/">Informacion de interes</a>
                 </small>
             </aside>
-            Creado por Balate
+          <small><strong>Creado por Balate</strong></small>
         </footer>
     </div>
 </div>
+
 
 

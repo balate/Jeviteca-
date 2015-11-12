@@ -6,6 +6,8 @@
     <table class="table">
         <tr ng-repeat="genre in generos">
             <td>{{genre.name}} </td>
+            <td>{{genre.albums.title}} </td>
+            <td>{{genre.albums.year}} </td>
         </tr>
     </table>
     <div>

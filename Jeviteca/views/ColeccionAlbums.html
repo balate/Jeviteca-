@@ -3,16 +3,26 @@
     <header>
         <h2>Albums</h2>
     </header>
+   <table class="table" >
+       <h4><strong>Buscar</strong></h4>
+    <div class="form-inline">
+        <strong><label form="filtroTitulo">Título</label></strong>
+        <input type="text" id="filtroTitulo" ng-model="titleFilter"/>
+        <label form="filtroAno">Año</label></strong>
+        <input type="text" id="filtroAno" ng-model="yearFilter"/>
+    </div>
+   </table>
+
     <table class="table">
-        <tr ng-repeat="album in albums">
+        <tr ng-repeat="album in albums | filter:{title: titleFilter} | filter:{year: yearFilter} ">
             <td>
                 <img src="img/{{::album.image}}" alt="Sin Imagen" width="120"/>
             </td>
-            <td><p><strong>Título</strong></p>{{album.title}} </td>
-            <td><p><strong>Banda</strong></p>{{album.band.name}}</td>
-            <td><p><small><strong>Año</strong></small></p>{{album.year}} </td>
-            <td><p><small><strong>Género</strong></small></p>{{album.genre.name}}</td>
-            <td>{{album.tracklist.name}}</td>
+            <td><p><strong>Título</strong></p>{{::album.title}} </td>
+            <td><p><strong>Banda</strong></p>{{::album.band.name}}</td>
+            <td><p><small><strong>Año</strong></small></p>{{::album.year}} </td>
+            <td><p><small><strong>Género</strong></small></p>{{::album.genre.name}}</td>
+            <td>{{::album.tracklist.name}}</td>
 
         </tr>
     </table>
@@ -23,7 +33,7 @@
                     <a href="#">Informacion de interes</a>
                 </small>
             </aside>
-            Creado por Balate
+            <small><strong>Creado por Balate</strong></small>
         </footer>
     </div>
 </div>

@@ -1,6 +1,6 @@
 
 //definición de la aplicación
-angular.module("jeviteca", ["ngRoute"]);
+angular.module("jeviteca", ["ngRoute", "angular-loading-bar"]);
 
 angular.module("jeviteca").config(function(AlbumsBackendProvider,BandasBackendProvider, GenerosBackendProvider, settings) {
     AlbumsBackendProvider.establecerUrlAlbums(settings.albumsUrl);
@@ -31,7 +31,7 @@ angular.module("jeviteca").config(function ($routeProvider) {
         controller:"ColecionBandasCtrl",
         templateUrl:"views/ColeccionBandas.html",
         resolve:{
-            Albums:["BandasBackend", function(BandasBackend){
+            Bandas:["BandasBackend", function(BandasBackend){
                 return BandasBackend.obtenerBands();
 
             }]
@@ -43,7 +43,7 @@ angular.module("jeviteca").config(function ($routeProvider) {
         controller:"ColecionGenerosCtrl",
         templateUrl:"views/ColeccionGeneros.html",
         resolve:{
-            Albums:["GenerosBackend", function(GenerosBackend){
+            Generos:["GenerosBackend", function(GenerosBackend){
                 return GenerosBackend.obtenerGengers();
 
             }]
