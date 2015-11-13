@@ -12,22 +12,12 @@
     </div>
     </table>
     <table class="table">
-        <tr ng-repeat="band in bandas | filter:{name: nameFilter} | filter:{origin: origenFilter}">
-            <td><p><strong>Nombre de Banda</strong></p>{{band.name}} </td>
-            <td><p><strong>Origén</strong></p>{{band.origin}} </td>
-            <td><p><strong>Miembros</strong></p>{{band.members.name}} </td>
+        <tr ng-repeat="band in bandas | filter:{name: nameFilter} | filter:{origin: origenFilter}"
+            element-bands
+                band="band">
         </tr>
     </table>
-    <div>
-        <footer>
-            <aside>
-                <small>
-                    <a href="#http://www.metaltotal.com/">Informacion de interes</a>
-                </small>
-            </aside>
-          <small><strong>Creado por Balate</strong></small>
-        </footer>
-    </div>
+   <footer-standart></footer-standart>
 </div>
 
 

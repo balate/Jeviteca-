@@ -14,28 +14,13 @@
    </table>
 
     <table class="table">
-        <tr ng-repeat="album in albums | filter:{title: titleFilter} | filter:{year: yearFilter} ">
-            <td>
-                <img src="img/{{::album.image}}" alt="Sin Imagen" width="120"/>
-            </td>
-            <td><p><strong>Título</strong></p>{{::album.title}} </td>
-            <td><p><strong>Banda</strong></p>{{::album.band.name}}</td>
-            <td><p><small><strong>Año</strong></small></p>{{::album.year}} </td>
-            <td><p><small><strong>Género</strong></small></p>{{::album.genre.name}}</td>
-            <td>{{::album.tracklist.name}}</td>
-
+        <tr ng-repeat="album in albums | filter:{title: titleFilter} | filter:{year: yearFilter}"
+            element-albums
+                album="album">
         </tr>
     </table>
-    <div>
-        <footer>
-            <aside>
-                <small>
-                    <a href="#">Informacion de interes</a>
-                </small>
-            </aside>
-            <small><strong>Creado por Balate</strong></small>
-        </footer>
-    </div>
+
+    <footer-standart></footer-standart>
 </div>
 
 
