@@ -3,14 +3,15 @@ angular.module("jeviteca").directive("elementAlbums", function () {
 
     return {
 
-        restrict:"AE",
+        restrict: "AE",
 
-        templateUrl:"views/ElementoAlbums.html",
+        templateUrl: "views/ElementoAlbums.html",
 
-        scope:{
+        scope: {
 
-            album:"="
+            album: "="
+
         }
-
     };
+
 });

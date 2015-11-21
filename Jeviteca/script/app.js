@@ -50,6 +50,8 @@ angular.module("jeviteca").config(function ($routeProvider) {
         }
     });
 
+
+
     //ruta por defecto
     $routeProvider.otherwise({
        redirectTo: "/albums"

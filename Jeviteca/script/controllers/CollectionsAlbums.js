@@ -4,5 +4,6 @@ angular.module("jeviteca").controller("ColecionAlbumsCtrl",function($scope, Albu
     $scope.albums =Albums.data;
 
 
+
 });
 
