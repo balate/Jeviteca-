@@ -9,7 +9,15 @@ angular.module("jeviteca").directive("elementAlbums", function () {
 
         scope: {
 
-            album: "="
+            album: "=",
+            clickDetails: "&"
+
+        },
+        link: function(scope){
+
+            scope.notificarClick = function(){
+                scope.clickDetails({id: scope.album.id });
+            }
 
         }
     };

@@ -21,9 +21,14 @@ angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
                     });
 
 
+                },
+                obtenerAlbum: function(id){
+                    return  $http.get(urlLocal + "/albums/" + id)
                 }
             };
         }]
+
+
     };
 
 });

@@ -16,7 +16,8 @@
     <table class="table">
         <tr ng-repeat="album in albums | filter:{title: titleFilter} | filter:{year: yearFilter}"
             element-albums
-                album="album">
+                album="album"
+                click-details="navDetails(id)">
         </tr>
 
     </table>

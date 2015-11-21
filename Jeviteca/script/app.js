@@ -26,6 +26,20 @@ angular.module("jeviteca").config(function ($routeProvider) {
         }
     });
 
+    //defino ruta detalle Albums
+    $routeProvider.when("/detalle/:id",{
+        controller:"AlbumsDetailCtrl",
+        templateUrl:"views/AlbumsDetail.html",
+        resolve:{
+
+            Albums:["AlbumsBackend", "$route",function(AlbumsBackend, $route){
+
+                return AlbumsBackend.obtenerAlbum($route.current.params.id);
+
+            }]
+        }
+    });
+
     //defino ruta Bandas
     $routeProvider.when("/bandas",{
         controller:"ColecionBandasCtrl",
@@ -37,6 +51,7 @@ angular.module("jeviteca").config(function ($routeProvider) {
             }]
         }
     });
+
 
     //defino ruta Géneros
     $routeProvider.when("/generos",{
