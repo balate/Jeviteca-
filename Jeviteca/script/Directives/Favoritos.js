@@ -4,7 +4,7 @@ angular.module("jeviteca").directive("favoritos",function() {
     return{
         restrict: "AE",
         replace: true,
-        templateURL:"views/Favoritos.html",
+        templateUrl:"views/Favoritos.html",
         scope: {
             id: "=",
             tipo: "@"

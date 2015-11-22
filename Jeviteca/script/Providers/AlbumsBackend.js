@@ -9,7 +9,7 @@ angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
         },
 
         //obtener Albums
-        $get: ["$http", function($http) {
+        $get: ["$http", function($http,$q,$filter) {
 
             return {
 
@@ -22,10 +22,24 @@ angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
 
 
                 },
-                obtenerAlbum: function(id){
-                    return  $http.get(urlLocal + "/albums/" + id)
+                /*obtenerAlbum: function(id){
+                    return  $http.get(urlLocal+"/albums/"+id)
+                }*/
+                obtenerAlbum: function(id) {
+                    // Creas un objeto diferido.
+                    var diferido = $q.defer();
+                    // Obtienes la colección de álbumes.
+                    $http.get(urlLocal).then(function(respuesta) {
+                        // Filtras la colección por el identificador.
+                        var albumes = $filter("filter")(respuesta.data, {"id": id});
+                        // Resuelves el objeto diferido con el primer elemento de la colección filtrada.
+                        diferido.resolve(albumes[0]);
+                    });
+                    // Retornas la promesa.
+                    return diferido.promise;
                 }
-            };
+
+        };
         }]
 
 
