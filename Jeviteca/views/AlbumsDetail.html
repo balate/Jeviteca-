@@ -2,7 +2,20 @@
 <article>
 
     <header>
-        <h4>{{album.title}}</h4>
+        <h4> Detalles de {{album.title}}</h4>
     </header>
 
+    <div>
+        <img ng-src="{{::album.image}}" alt="Sin Imagen" width="320" class="img-circle"/>
+    </div>
+
+    <div>
+        <p>{{ ::album.year }}</p>
+        <p>{{ ::album.band.name }}</p>
+        <p>{{ ::album.year }}</p>
+        <p>{{ ::album.tracklist }}</p>
+    </div>
+
+    <footer-standart></footer-standart>
 </article>
+

@@ -9,7 +9,7 @@ angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
         },
 
         //obtener Albums
-        $get: ["$http", function($http,$q,$filter) {
+        $get: ["$http","$q","$filter", function($http,$q,$filter) {
 
             return {
 
@@ -22,9 +22,7 @@ angular.module("jeviteca").provider("AlbumsBackend", function($httpProvider) {
 
 
                 },
-                /*obtenerAlbum: function(id){
-                    return  $http.get(urlLocal+"/albums/"+id)
-                }*/
+
                 obtenerAlbum: function(id) {
                     // Creas un objeto diferido.
                     var diferido = $q.defer();

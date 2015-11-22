@@ -32,7 +32,7 @@ angular.module("jeviteca").config(function ($routeProvider) {
         templateUrl:"views/AlbumsDetail.html",
         resolve:{
 
-            Albums:["AlbumsBackend", "$route",function(AlbumsBackend, $route){
+            Album:["AlbumsBackend", "$route",function(AlbumsBackend, $route){
 
                 return AlbumsBackend.obtenerAlbum($route.current.params.id);
 
