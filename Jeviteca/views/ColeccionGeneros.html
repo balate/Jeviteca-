@@ -6,19 +6,12 @@
     <table class="table">
         <tr ng-repeat="genre in generos">
             <td>{{genre.name}} </td>
+            <td>{{genre.albums.band.name}} </td>
             <td>{{genre.albums.title}} </td>
-            <td>{{genre.albums.year}} </td>
         </tr>
     </table>
     <div>
-        <footer>
-            <aside>
-                <small>
-                    <a href="#">Informacion de interes</a>
-                </small>
-            </aside>
-            Creado por Balate
-        </footer>
+        <footer-standart></footer-standart>
     </div>
 </div>
 

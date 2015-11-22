@@ -1,21 +1,22 @@
-
 <article>
 
     <header>
-        <h4> Detalles de {{album.title}}</h4>
+        <h2> Album {{album.title}}</h2>
     </header>
+            <div>
+            <img src="img/{{::album.image}}" alt="Sin Imagen" width="320" class="img-circle"/>
+        </div>
 
-    <div>
-        <img ng-src="{{::album.image}}" alt="Sin Imagen" width="320" class="img-circle"/>
-    </div>
+        <div class="tab-content">
+           <h3> Grupo: {{ ::album.band.name}}</h3>
 
-    <div>
-        <p>{{ ::album.year }}</p>
-        <p>{{ ::album.band.name }}</p>
-        <p>{{ ::album.year }}</p>
-        <p>{{ ::album.tracklist }}</p>
-    </div>
-
+            <p><strong>Año </strong>{{ ::album.year }}</p>
+            <ul>
+                <p><strong>Canciones</strong>
+                <li ng-repeat="tracklist in album.tracklist">
+                </p>{{::tracklist}}</li>
+            </ul>
+        </div>
     <footer-standart></footer-standart>
 </article>
 
