@@ -1,5 +1,5 @@
 
-angular.module("jeviteca").controller("AlbumsDetailCtrl",function($scope, Album) {
+angular.module("jeviteca").controller("AlbumsDetailCtrl",function($scope, Album, settings, Utilidades) {
 
     $scope.album = Album;
 
@@ -7,5 +7,14 @@ angular.module("jeviteca").controller("AlbumsDetailCtrl",function($scope, Album)
     $scope.volver= function(){
         history.back();
     };
+
+    $scope.enlazarYoutube = function(banda, cancion) {
+        return Utilidades.youtubeUrl(banda, cancion)
+    };
+
+    $scope.enlazarWikipedia = function(banda) {
+        return Utilidades.wikipediaUrl(banda);
+    };
+
 
 });

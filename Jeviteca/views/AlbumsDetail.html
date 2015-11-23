@@ -10,17 +10,23 @@
 
         <div class="container">
            <h3> Grupo: {{ ::album.band.name}}</h3>
-
             <p><strong>Año </strong>{{ ::album.year }}</p>
             <ul>
                 <p><strong>Canciones</strong>
-                <li ng-repeat="tracklist in album.tracklist">
-                </p>{{::tracklist}}</li>
+                <li ng-repeat="track in album.tracklist">
+                    <p>
+                        <a ng-href = "{{ enlazarYoutube(album.band.name, track) }}" target="_blank"> {{ track }} </a>
+                    </p>
+                </li>
             </ul>
-
-
-
         </div>
+    <div>
+        <p>
+            <strong>
+                <a ng-href = "{{ enlazarWikipedia(album.band.name) }}" target="_blank"> Mas info de {{album.band.name}} </a>
+            </strong>
+        </p>
+    </div>
     <footer-standart></footer-standart>
 </article>
 
