@@ -3,16 +3,18 @@ angular.module("jeviteca").controller("BarraNavegacionCrtl",function($scope, $ro
 
     $scope.pathAlbums = function(){
 
-        return $route.current && $route.current.$$route.originalPath === "/albums";
+        return $route.current && $route.current.$$route && $route.current.$$route.originalPath === "/albums";
+
     };
 
     $scope.pathBands = function(){
 
-        return $route.current && $route.current.$$route.originalPath === "/bandas";
+        return $route.current && $route.current.$$route && $route.current.$$route.originalPath === "/bandas";
     };
 
     $scope.pathGengers = function(){
 
-        return $route.current && $route.current.$$route.originalPath === "/generos";
+
+        return $route.current && $route.current.$$route && $route.current.$$route.originalPath === "/generos";
     };
 });
